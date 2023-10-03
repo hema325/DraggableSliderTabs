@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #5271e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    caret-color: transparent;
+}
+
+
+.slider {
+    width: 80vw;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: relative;
+}
+
+.slider {
+    cursor: grab;
+}
+
+.slider:active {
+    cursor: grabbing;
+}
+
+.slider .tabs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.slider .tabs .tab {
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.slider .tabs .tab a {
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    color: #444;
+    background-color: #f5f3fb;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 1px solid #ddd;
+    transition: background-color 400ms;
+}
+
+.slider .tabs .tab a:hover {
+    background-color: #eae7f9;
+}
+
+.slider .left,
+.slider .right {
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    color: #444;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity, background-color, 400ms;
+}
+
+.slider .left {
+    background-image: linear-gradient(to right, #fff 50%, transparent);
+    left: 20px;
+    justify-content: start;
+}
+
+.slider .right {
+    background-image: linear-gradient(to left, #fff 50%, transparent);
+    right: 20px;
+    justify-content: end;
+}
+
+.slider .left.active,
+.slider .right.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slider .left i,
+.slider .right i {
+    border-radius: 50%;
+}
+
+.slider .left:hover i,
+.slider .right:hover i {
+    background-color: #f5f3fb;
+}
